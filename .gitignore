@@ -1,0 +1,13 @@
+.DS_Store
+.swp
+tags
+/.bundle
+/bin
+/config/database.yml
+/config/secrets.yml
+/db/schema.rb
+/log/*.log
+/public/uploads
+/public/assets
+/tmp
+/vendor/bundle
