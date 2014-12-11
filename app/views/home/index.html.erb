@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TIANYI XINGHE</title>
+  <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <table class="home">
+      <tr>
+        <td class="left"></td>
+        <td class="center"><%= link_to image_tag('frontend/home_c.jpg'), about_us_path %></td>
+        <td class="right"></td>
+      </tr>
+    </table>
+  </body>
+</html>
