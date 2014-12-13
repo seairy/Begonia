@@ -2,7 +2,6 @@
 .swp
 tags
 /.bundle
-/bin
 /config/database.yml
 /config/secrets.yml
 /db/schema.rb

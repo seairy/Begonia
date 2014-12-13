@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TIANYI XINGHE</title>
+  <title>天亦兴合 | TIANYI XINGHE</title>
   <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -33,7 +33,27 @@
             </ul>
           </li>
           <li>
-            <%= link_to '产品系列', test_products_path %>
+            <%= link_to '产品系列' %>
+            <ul>
+              <li>
+                <%= link_to '车载动中通0.6米', products_car_mobile_communication_antenna_point_6_path %>
+              </li>
+              <li>
+                <%= link_to '车载动中通0.9米', products_car_mobile_communication_antenna_point_9_path %>
+              </li>
+              <li>
+                <%= link_to '车载静中通', products_through_static_antenna_path %>
+              </li>
+              <li>
+                <%= link_to '船载动中通Ku频', products_shipboard_antenna_ku_path %>
+              </li>
+              <li>
+                <%= link_to '船载动中通C频', products_shipboard_antenna_c_path %>
+              </li>
+              <li>
+                <%= link_to '便携站', products_portable_transportable_satellite_station_path %>
+              </li>
+            </ul>
           </li>
           <li>
             <%= link_to '线上组装' %>
