@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     get 'shipboard_antenna_ku', to: 'products#shipboard_antenna_ku', as: :shipboard_antenna_ku
     get 'through_static_antenna', to: 'products#through_static_antenna', as: :through_static_antenna
   end
+  scope 'assemblings', as: 'assemblings' do
+    get 'ford_f150', to: 'assemblings#ford_f150', as: :ford_f150
+  end
 end

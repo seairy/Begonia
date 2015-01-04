@@ -3,6 +3,11 @@
 <head>
   <title>天亦兴合 | TIANYI XINGHE</title>
   <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
+  <% if controller_name == 'assemblings' %>
+  <%= stylesheet_link_tag 'frontend/assembling.bg', media: 'all', 'data-turbolinks-track' => true %>
+  <% else %>
+  <%= stylesheet_link_tag 'frontend/common.bg', media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
   <body>
@@ -57,6 +62,11 @@
           </li>
           <li>
             <%= link_to '线上组装' %>
+            <ul>
+              <li>
+                <%= link_to '福特 F150', assemblings_ford_f150_path %>
+              </li>
+            </ul>
           </li>
           <li>
             <%= link_to '联系我们' %>

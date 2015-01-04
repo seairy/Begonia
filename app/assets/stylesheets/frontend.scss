@@ -1,12 +1,6 @@
 //= require frontend/reset
 //= require frontend/superfish
 
-#container {
-  width: 1920px;
-  height: 1080px;
-  background: asset-url("frontend/bg_grey.jpg") no-repeat;
-}
-
 table.home {
   width: 100%;
   td {
