@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>天亦兴合 | TIANYI XINGHE</title>
+  <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'frontend/assembling.bg', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <div id="container">
+      <%= yield %>
+    </div>
+  <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+  <%= javascript_tag do %>
+    jQuery(document).ready(function(){
+      jQuery('ul.sf-menu').superfish();
+    });
+  <% end %>
+  <%= content_for :javascript %>
+  </body>
+</html>

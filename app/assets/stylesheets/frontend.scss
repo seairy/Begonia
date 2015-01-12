@@ -1,5 +1,7 @@
 //= require frontend/reset
+//= require frontend/jquery-ui
 //= require frontend/superfish
+//= require frontend/dlmenu
 
 table.home {
   width: 100%;
@@ -202,6 +204,20 @@ div.product-through-static-antenna {
   background: asset-url("frontend/product_through_static_antenna.png") no-repeat;
   div.content {
     width: 800px;
+  }
+}
+
+div.em-navi {
+  float: left;
+  width: 500px;
+  margin: 32px 0 0 30px;
+}
+
+div.ford-f150-angle-1 {
+  img {
+    position: absolute;
+    left: 530px;
+    top: 340px;
   }
 }
 
