@@ -1,6 +1,7 @@
 source 'http://ruby.taobao.org'
 
 gem 'rails', '4.1.0'
+gem 'libv8', '3.16.14.3'
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'turbolinks'
