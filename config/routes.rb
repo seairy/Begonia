@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get 'translate', to: 'home#translate'
   get 'about_us', to: 'about_us#show'
   scope 'markets' do
-    get '/', to: 'markets#index', as: :markets
+    get 'ocean_areas', to: 'markets#ocean_areas', as: :ocean_areas
+    get 'land_areas', to: 'markets#land_areas', as: :land_areas
+    get 'aerospace', to: 'markets#aerospace', as: :aerospace
   end
   scope 'products', as: 'products' do
     get 'car_mobile_communication_antenna_point_6', to: 'products#car_mobile_communication_antenna_point_6', as: :car_mobile_communication_antenna_point_6

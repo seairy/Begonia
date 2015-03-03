@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:seairy/Begonia.git'
 
 set :keep_releases, 5
 
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml abc}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 
 set :use_sudo, false

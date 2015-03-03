@@ -1,18 +1,124 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>天亦兴合 | TIANYI XINGHE</title>
-  <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-  <body>
-    <table class="home">
-      <tr>
-        <td class="left"></td>
-        <td class="center"><%= link_to image_tag('frontend/home_c.jpg'), about_us_path %></td>
-        <td class="right"></td>
-      </tr>
-    </table>
-  </body>
-</html>
+<div role="main" class="main">
+  <div class="slider-container">
+    <div class="slider" id="revolutionSlider" data-plugin-revolution-slider data-plugin-options='{"startheight": 500}'>
+      <ul>
+        <li data-transition="fade" data-slotamount="13" data-masterspeed="300" >
+          <%= image_tag 'frontend/slides/bg-sky.jpg', data: { bgfit: 'cover', bgposition: 'left top', bgrepeat: 'no-repeat'} %>
+          <div class="tp-caption sft stb visible-lg"
+             data-x="667"
+             data-y="180"
+             data-speed="300"
+             data-start="1000"
+             data-easing="easeOutExpo"><%= image_tag 'frontend/slides/slide-title-border.png' %></div>
+          <div class="tp-caption top-label lfl stl"
+             data-x="717"
+             data-y="180"
+             data-speed="300"
+             data-start="500"
+             data-easing="easeOutExpo">创新、务实、诚信、平等</div>
+          <div class="tp-caption sft stb visible-lg"
+             data-x="993"
+             data-y="180"
+             data-speed="300"
+             data-start="1000"
+             data-easing="easeOutExpo"><%= image_tag 'frontend/slides/slide-title-border.png' %></div>
+          <div class="tp-caption main-label sft stb"
+             data-x="725"
+             data-y="210"
+             data-speed="300"
+             data-start="1500"
+             data-easing="easeOutExpo">天亦兴合</div>
+          <div class="tp-caption bottom-label sft stb"
+             data-x="715"
+             data-y="280"
+             data-speed="500"
+             data-start="2000"
+             data-easing="easeOutExpo">与广大客户共同携手共创未来！</div>
+          <div class="tp-caption lfb"
+             data-x="287"
+             data-y="180"
+             data-speed="4000"
+             data-start="2500"
+             data-easing="easeOutQuint"><%= image_tag 'frontend/slides/slide-rocket.png' %></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="home-intro" id="home-intro">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <p>
+            北京天亦兴合通讯设备有限公司与中国电子科技集团公司第五十四研究所
+            <span>携手开创中国电子信息的美好蓝图，共同推动中国应急通信的综合竞争力</span>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <div class="get-started">
+            <a href="#" class="btn btn-lg btn-primary">主要产品</a>
+            <div class="learn-more"><a href="index.html">了解更多...</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row center">
+      <div class="col-md-12">
+        <h1 class="short word-rotator-title">
+          我们秉承着
+          <strong class="inverted">
+            <span class="word-rotate" data-plugin-options='{"delay": 2000, "animDelay": 300}'>
+              <span class="word-rotate-items">
+                <span>创新</span>
+                <span>务实</span>
+                <span>诚信</span>
+                <span>平等</span>
+              </span>
+            </span>
+          </strong>
+          的总体原则与您共同创造未来！
+        </h1>
+        <p class="featured lead">
+          北京天亦兴合通讯设备有限公司是一家致力于电子信息领域建设的股份制有限公司，依托于中国电子科技集团公司第五十四研究所，主要针对通讯领域市场建设，产品主要为动中通、静中通、便携站等通讯产品；公司先后为公安部、北京市公安局等客户提供服务并取得客户的好评。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="home-concept">
+    <div class="container">
+      <div class="row center">
+        <div class="col-md-2 col-md-offset-1">
+          <div class="process-image" data-appear-animation="bounceIn">
+            <%= image_tag 'frontend/home-product-sm-1.png' %>
+            <strong>动中通</strong>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="200">
+            <%= image_tag 'frontend/home-product-sm-2.png' %>
+            <strong>静中通</strong>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="process-image" data-appear-animation="bounceIn" data-appear-animation-delay="400">
+            <%= image_tag 'frontend/home-product-sm-3.png' %>
+            <strong>便携站</strong>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-1">
+          <div class="project-image">
+            <div id="fcSlideshow" class="fc-slideshow">
+              <ul class="fc-slides">
+                <li><%= link_to image_tag('frontend/home-product-xs-1.jpg', class: 'img-responsive') %></li>
+                <li><%= link_to image_tag('frontend/home-product-xs-2.jpg', class: 'img-responsive') %></li>
+                <li><%= link_to image_tag('frontend/home-product-xs-3.jpg', class: 'img-responsive') %></li>
+              </ul>
+            </div>
+            <strong class="our-work">市场领域</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

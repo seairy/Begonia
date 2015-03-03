@@ -1,4 +1,4 @@
-class AssemblingsController < ApplicationController
+class AssemblingsController < BaseController
 
   def ford_f150
     

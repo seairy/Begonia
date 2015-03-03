@@ -1,4 +1,4 @@
-class MarketsController < ApplicationController
+class MarketsController < BaseController
 
   def index
     

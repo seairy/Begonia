@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( frontend.css frontend.js frontend/common.bg.css frontend/assembling.bg.css backend.css backend.js )
+Rails.application.config.assets.precompile += %w( frontend.css frontend.js frontend/ie.css frontend/respond.js frontend/excanvas.js frontend/modernizr.js )

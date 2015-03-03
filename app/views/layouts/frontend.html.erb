@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>天亦兴合 | TIANYI XINGHE</title>    
+    <meta name="keywords" content="天亦兴合" />
+    <meta name="description" content="天亦兴合">
+    <meta name="author" content="北京天亦兴合通讯设备有限公司是一家致力于电子信息领域建设的股份制有限公司，依托于中国电子科技集团公司第五十四研究所，主要针对通讯领域市场建设。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'frontend/modernizr', 'data-turbolinks-track' => true %>
+    <!--[if IE]>
+      <%= stylesheet_link_tag 'frontend/ie', media: 'all', 'data-turbolinks-track' => true %>
+    <![endif]-->
+    <!--[if lte IE 8]>
+      <%= javascript_include_tag 'frontend/respond', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'frontend/excanvas', 'data-turbolinks-track' => true %>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="body">
+      <header id="header">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">
+              <%= link_to image_tag('frontend/logo.png', width: 304, height: 70, data: { 'sticky-width' => 174, 'sticky-height' => 40 }), root_path %>
+            </a>
+          </div>
+        </div>
+        <div class="navbar-collapse nav-main-collapse collapse">
+          <div class="container">
+            <nav class="nav-main mega-menu">
+              <ul class="nav nav-pills nav-main" id="mainMenu">
+                <li<%= raw(' class="active"') if controller_name == 'home' %>>
+                  <%= link_to '首页', root_path %>
+                </li>
+                <li class="dropdown<%= raw(' active') if controller_name == 'markets' %>">
+                  <%= link_to raw('市场领域 <i class="fa fa-angle-down"></i>'), nil, class: 'dropdown-toggle' %>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to '海事领域', ocean_areas_path %></li>
+                    <li><%= link_to '陆用领域', land_areas_path %></li>
+                    <li><%= link_to '航空领域', aerospace_path %></li>
+                  </ul>
+                </li>
+                <li class="dropdown<%= raw(' active') if controller_name == 'products' %>">
+                  <%= link_to raw('产品系列 <i class="fa fa-angle-down"></i>'), nil, class: 'dropdown-toggle' %>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to '车载动中通0.6米', products_car_mobile_communication_antenna_point_6_path %></li>
+                    <li><%= link_to '车载动中通0.9米', products_car_mobile_communication_antenna_point_9_path %></li>
+                    <li><%= link_to '车载静中通', products_through_static_antenna_path %></li>
+                    <li><%= link_to '船载动中通Ku频', products_shipboard_antenna_ku_path %></li>
+                    <li><%= link_to '船载动中通C频', products_shipboard_antenna_c_path %></li>
+                    <li><%= link_to '便携站', products_portable_transportable_satellite_station_path %></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <%= link_to raw('线上组装 <i class="fa fa-angle-down"></i>'), nil, class: 'dropdown-toggle' %>
+                  <ul class="dropdown-menu">
+                    <li><%= link_to '福特 F150' %></li>
+                  </ul>
+                </li>
+                <li<%= raw(' class="active"') if controller_name == 'about_us' %>>
+                  <%= link_to '关于我们', about_us_path %>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <%= yield %>
+      <footer id="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-ribbon">
+              <span>联系我们</span>
+            </div>
+            <div class="col-md-5">
+              <div class="newsletter">
+                <h4>邮件订阅</h4>
+                <p>若您希望及时获取有关我公司产品及技术特性的最新信息，请输入邮件地址并点击订阅，我们会将相关内容通过电子邮件的形式发送给您。</p>
+                <div class="alert alert-success hidden" id="newsletterSuccess">
+                  <strong>Success!</strong> You've been added to our email list.
+                </div>
+                <div class="alert alert-danger hidden" id="newsletterError"></div>
+                <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
+                  <div class="input-group">
+                    <input class="form-control" placeholder="电子邮件地址" name="newsletterEmail" id="newsletterEmail" type="text">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">订阅</button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="contact-details">
+                <h4>联系信息</h4>
+                <ul class="contact">
+                  <li><p><i class="fa fa-map-marker"></i> <strong>联系地址：</strong> 北京市东城区前门东大街7号楼</p></li>
+                  <li><p><i class="fa fa-phone"></i> <strong>联系电话：</strong> (123) 456-7890</p></li>
+                  <li><p><i class="fa fa-envelope"></i> <strong>电子邮件：</strong> <%= link_to 'service@yingjitongxin.com.cn', 'service@yingjitongxin.com.cn' %></p></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-1">
+                <%= link_to image_tag('frontend/logo-grey.png'), nil, class: 'logo' %>
+              </div>
+              <div class="col-md-7">
+                <p>© Copyright 2015. All Rights Reserved.</p>
+              </div>
+              <div class="col-md-4">
+                <nav id="sub-menu">
+                  <ul>
+                    <li><%= link_to '关于我们' %></li>
+                    <li><%= link_to '诚聘英才' %></li>
+                    <li><%= link_to '联系我们' %></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+  </body>
+</html>

@@ -1,6 +1,6 @@
-class HomeController < ApplicationController
+class HomeController < BaseController
 
   def index
-    render layout: false
+    
   end
 end

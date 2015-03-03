@@ -1,6 +1,3 @@
-class ProductsController < ApplicationController
+class ProductsController < BaseController
 
-  def test
-    
-  end
 end

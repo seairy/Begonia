@@ -1,0 +1,1 @@
+Rack::Timeout.timeout = 86400
