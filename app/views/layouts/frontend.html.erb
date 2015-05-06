@@ -20,29 +20,7 @@
   </head>
   <body>
     <div class="body">
-      <header id="header" class="colored flat-menu">
-        <div class="header-top">
-          <div class="container">
-            <nav>
-              <ul class="nav nav-pills nav-top">
-                <li>
-                  <a href="about-us.html"><i class="fa fa-angle-right"></i>About Us</a>
-                </li>
-                <li>
-                  <a href="contact-us.html"><i class="fa fa-angle-right"></i>Contact Us</a>
-                </li>
-                <li class="phone">
-                  <span><i class="fa fa-phone"></i>(010) 8440-2895</span>
-                </li>
-              </ul>
-            </nav>
-            <ul class="social-icons">
-              <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
-              <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
-              <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
-            </ul>
-          </div>
-        </div>
+      <header id="header" class="flat-menu single-menu">
         <div class="container">
           <div class="logo">
             <a href="index.html">
@@ -52,6 +30,11 @@
         </div>
         <div class="navbar-collapse nav-main-collapse collapse">
           <div class="container">
+            <ul class="social-icons">
+              <li class="facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook">Facebook</a></li>
+              <li class="twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter">Twitter</a></li>
+              <li class="linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin">Linkedin</a></li>
+            </ul>
             <nav class="nav-main mega-menu">
               <ul class="nav nav-pills nav-main" id="mainMenu">
                 <li<%= raw(' class="active"') if controller_name == 'home' %>>
