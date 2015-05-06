@@ -10,6 +10,7 @@
 //= require frontend/jquery.magnific-popup
 //= require frontend/jquery.flipshow
 //= require frontend/jquery.easy-pie-chart
+//= require frontend/vide
 //= require frontend/view.home
 //= require frontend/theme
 //= require frontend/jquery.themepunch.tools.min

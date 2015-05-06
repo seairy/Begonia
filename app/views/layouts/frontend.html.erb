@@ -65,6 +65,9 @@
                     <li><%= link_to '福特 F150' %></li>
                   </ul>
                 </li>
+                <li<%= raw(' class="active"') if controller_name == 'maintenance' %>>
+                  <%= link_to '维护维保', maintenance_path %>
+                </li>
                 <li<%= raw(' class="active"') if controller_name == 'about_us' %>>
                   <%= link_to '关于我们', about_us_path %>
                 </li>

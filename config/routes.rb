@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'translate', to: 'home#translate'
   get 'about_us', to: 'about_us#show'
+  get 'maintenance', to: 'maintenance#show'
   scope 'markets' do
     get 'ocean_areas', to: 'markets#ocean_areas', as: :ocean_areas
     get 'land_areas', to: 'markets#land_areas', as: :land_areas

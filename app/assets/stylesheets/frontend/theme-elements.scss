@@ -1103,7 +1103,7 @@ section.video .container {
 }
 
 section.video .video-overlay {
-  background: transparent url(../img/video-overlay.png) repeat 0 0;
+  background: transparent asset-url("frontend/video-overlay.png") repeat 0 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -3187,7 +3187,7 @@ ul.history li p {
 }
 
 ul.history li .thumb {
-  background: transparent url(../img/history-thumb.png) no-repeat 0 0;
+  background: transparent asset-url("frontend/history-bg.png") no-repeat 0 0;
   width: 227px;
   height: 160px;
   margin: 0 0 30px;
