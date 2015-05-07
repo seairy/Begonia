@@ -16,6 +16,11 @@ Rails.application.routes.draw do
     get 'shipboard_antenna_ku', to: 'products#shipboard_antenna_ku', as: :shipboard_antenna_ku
     get 'through_static_antenna', to: 'products#through_static_antenna', as: :through_static_antenna
   end
+  resources :downloads do
+    collection do
+      get :video
+    end
+  end
   namespace 'assembling' do
     concern :rotatable do
       member do
