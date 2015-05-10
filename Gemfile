@@ -29,9 +29,6 @@ group :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'spring'
-  gem 'easy_translate'
-  gem 'bing_translator'
-  gem 'whois'
 end
 
 group :test do

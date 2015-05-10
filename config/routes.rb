@@ -21,6 +21,12 @@ Rails.application.routes.draw do
       get :video
     end
   end
+  resources :jobs do
+    collection do
+      get :apply_form
+      post :apply
+    end
+  end
   namespace 'assembling' do
     concern :rotatable do
       member do

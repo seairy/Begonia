@@ -2399,7 +2399,7 @@ ul.social-icons li {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-image: url(../img/social-sprites.png);
+  background: asset-url("frontend/social-sprites.png");
   background-repeat: no-repeat;
   background-position: 0 100px;
   display: inline-block;
@@ -2694,6 +2694,22 @@ ul.social-icons li.vk {
 
 ul.social-icons li.vk:hover {
   background-position: 0 -1890px;
+}
+
+ul.social-icons li.weibo {
+  background-position: 0 -1920px;
+}
+
+ul.social-icons li.weibo:hover {
+  background-position: 0 -1950px;
+}
+
+ul.social-icons li.wechat {
+  background-position: 0 -1980px;
+}
+
+ul.social-icons li.wechat:hover {
+  background-position: 0 -2010px;
 }
 
 /* Arrows */

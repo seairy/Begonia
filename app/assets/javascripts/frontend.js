@@ -13,6 +13,7 @@
 //= require frontend/vide
 //= require frontend/view.home
 //= require frontend/theme
+//= require frontend/theme-admin
 //= require frontend/jquery.themepunch.tools.min
 //= require frontend/jquery.themepunch.revolution.min
 //= require frontend/theme.init
