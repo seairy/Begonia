@@ -271,6 +271,10 @@ ul.nav-list.primary > li a {
   padding: 8px 0;
 }
 
+ul.nav-list.primary > li.active a {
+  background-color: #ccc;
+}
+
 ul.nav-list.primary > li a:before {
   content: "";
   display: inline-block;

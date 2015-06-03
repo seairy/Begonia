@@ -1,0 +1,38 @@
+<div class="pageheader">
+  <h2><i class="fa fa-list"></i> 车辆管理 <span>列表</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-primary table-striped mb30">
+          <thead>
+            <tr>
+              <th><%= brac_t 'vehicle.name' %></th>
+              <th><%= brac_t 'vehicle.visible' %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="table-paginate"><%= brac_paginate @vehicles %></td>
+            </tr>
+          </tfoot>
+          <tbody>
+            <% @vehicles.each do |vehicle| %>
+            <tr>
+              <td><%= vehicle.name %></td>
+              <td><%= brac_styled_boolean vehicle.visible? %></td>
+              <td class="table-action">
+                <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, vehicle] %>
+                <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_vehicle_path(vehicle) %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

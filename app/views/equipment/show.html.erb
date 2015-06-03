@@ -1,0 +1,14 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+  <h4 class="modal-title" id="myModalLabel"><%= @equipment.name %></h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-xs-4"><%= image_tag @equipment.image, class: 'img-responsive' %></div>
+    <div class="col-xs-8" style="font-size: 12px;"><%= textile @equipment.description %></div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+  <%= link_to '使用该设备', use_equipment_path(@equipment), method: :put, class: 'btn btn-primary' %>
+</div>

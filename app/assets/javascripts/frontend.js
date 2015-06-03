@@ -17,3 +17,4 @@
 //= require frontend/jquery.themepunch.tools.min
 //= require frontend/jquery.themepunch.revolution.min
 //= require frontend/theme.init
+//= require frontend/jquery-ui

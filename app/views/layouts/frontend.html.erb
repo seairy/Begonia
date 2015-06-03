@@ -61,7 +61,9 @@
                 <li class="dropdown">
                   <%= link_to raw('线上组装 <i class="fa fa-angle-down"></i>'), nil, class: 'dropdown-toggle' %>
                   <ul class="dropdown-menu">
-                    <li><%= link_to '福特 F150' %></li>
+                    <% Vehicle.all.each do |vehicle| %>
+                    <li><%= link_to vehicle.name, vehicle %></li>
+                    <% end %>
                   </ul>
                 </li>
                 <li<%= raw(' class="active"') if controller_name == 'maintenance' %>>
@@ -144,5 +146,6 @@
       </footer>
     </div>
     <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+    <%= content_for :javascript %>
   </body>
 </html>

@@ -1,0 +1,86 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> 视角管理 <span>查看</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">视角信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'angle.vehicle' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @angle.vehicle.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'angle.name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @angle.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '返回车辆信息', [:cms, @angle.vehicle], class: 'btn btn-default' %>&nbsp;
+      <%= link_to '编辑', edit_cms_angle_path(@angle), class: 'btn btn-primary' %>&nbsp;
+      <%= link_to '创建新分类', new_cms_angle_category_path(@angle), class: 'btn btn-primary' %>&nbsp;
+    </div>
+  </div>
+  <% @angle.categories.each do |category| %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title"><%= category.name %></h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-primary table-striped mb30">
+            <tbody>
+              <% category.equipment.each do |equipment| %>
+              <tr>
+                <td><%= link_to equipment.name, [:cms, equipment] %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '编辑', edit_cms_category_path(category), class: 'btn btn-primary' %>&nbsp;
+      <%= link_to '删除', [:cms, category], method: :delete, data: { confirm: '确定要删除吗？' }, class: 'btn btn-danger' %>&nbsp;
+      <%= link_to '创建新设备', new_cms_category_equipment_path(category), class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <% end %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">图片列表</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-primary table-striped mb30">
+            <tbody>
+              <% @angle.pictures.each do |picture| %>
+              <tr>
+                <td><%= image_tag(picture.file, class: 'w300') %></td>
+                <td><%= raw picture.human_code.join('<br />') %></td>
+                <td class="table-action">
+                  <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_picture_path(picture) %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '创建', new_cms_angle_picture_path(@angle), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

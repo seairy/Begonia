@@ -1,0 +1,115 @@
+<div role="main" class="main">
+  <section class="page-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><%= link_to '首页', root_path %></li>
+            <li class="active">在线组装</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h1><%= @vehicle.name %></h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="blog-posts single-post">
+          <article class="post post-large blog-single-post">
+            <div class="post-image">
+              <div>
+                <div class="img-thumbnail">
+                  <%= image_tag @picture.try(:file), class: 'img-responsive' %>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <aside class="sidebar">
+          <h4>视角</h4>
+          <ul class="nav nav-list primary push-bottom">
+            <% @vehicle.angles.each do |angle| %>
+            <li<%= raw(' class="active"') if angle.id == @angle.id %>><%= link_to angle.name, vehicle_path(@vehicle, angle_id: angle.id) %></li>
+            <% end %>
+          </ul>
+          <% @angle.categories.each do |category| %>
+          <h5><%= category.name %></h5>
+          <ul class="nav nav-list primary push-bottom">
+            <% category.equipment.each do |equipment| %>
+            <li><%= link_to equipment.name, equipment, 'data-toggle' => 'modal', 'data-target' => '.show-equipment-modal' %></li>
+            <% end %>
+          </ul>
+          <% end %>
+          <%= link_to '重置设备', reset_vehicle_path(@vehicle, angle_id: @angle.id), class: 'btn btn-primary' %>
+        </aside>
+        <!-- <div id="accordion">
+          <h3>Section 1</h3>
+          <div>
+            <p>
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+            </p>
+          </div>
+          <h3>Section 2</h3>
+          <div>
+            <p>
+            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+            suscipit faucibus urna.
+            </p>
+          </div>
+          <h3>Section 3</h3>
+          <div>
+            <p>
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+            </p>
+            <ul>
+              <li>List item one</li>
+              <li>List item two</li>
+              <li>List item three</li>
+            </ul>
+          </div>
+          <h3>Section 4</h3>
+          <div>
+            <p>
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+            </p>
+            <p>
+            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<div id="showEquipmentModal" class="modal fade show-equipment-modal" tabindex="-1" role="dialog" aria-labelledby="showEquipment" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content"></div>
+  </div>
+</div>
+<% content_for :javascript do %>
+  <script>
+  $('body').on('hidden.bs.modal', '.modal', function () {
+    $(this).removeData('bs.modal');
+  });
+  </script>
+<% end %>

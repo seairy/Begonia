@@ -1,0 +1,56 @@
+<div class="pageheader">
+  <h2><i class="fa fa-pencil-square-o"></i> 图片管理 <span>创建</span></h2>
+</div>
+<div class="contentpanel">
+  <%= render "cms/commons/error_messages", target: @picture %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">图片信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_for [:cms, @angle, @picture], html: { class: 'form-horizontal form-bordered' } do |f| %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'picture.vehicle' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @angle.vehicle.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'picture.angle' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @angle.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <% @angle.categories.each do |category| %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= category.name %></label>
+          <div class="col-sm-6">
+            <div class="rdio rdio-default">
+              <%= radio_button_tag "equipment[#{category.id}]", 0 %>
+              <label for="<%= "equipment_#{category.id}_0" %>">无</label>
+            </div>
+            <% category.equipment.each do |equipment| %>
+            <div class="rdio rdio-default">
+              <%= radio_button_tag "equipment[#{category.id}]", equipment.id %>
+              <label for="<%= "equipment_#{category.id}_#{equipment.id}" %>"><%= equipment.name %></label>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'picture.file' %></label>
+          <div class="col-sm-6">
+            <%= f.file_field :file, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12 text-center">
+            <%= f.submit '提交', class: 'btn btn-primary' %>&nbsp;
+            <%= link_to '返回视角信息', [:cms, @angle], class: 'btn btn-default' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

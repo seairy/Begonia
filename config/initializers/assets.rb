@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( frontend.css frontend.js frontend/ie.css frontend/respond.js frontend/excanvas.js frontend/modernizr.js )
+Rails.application.config.assets.precompile += %w( frontend.css frontend.js frontend/ie.css frontend/respond.js cms.css cms.js cms_signin.css cms_signin.js frontend/modernizr.js frontend/excanvas.js )

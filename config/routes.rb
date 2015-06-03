@@ -27,12 +27,39 @@ Rails.application.routes.draw do
       post :apply
     end
   end
-  namespace 'assembling' do
-    concern :rotatable do
-      member do
-        get 'angle_1'
-      end
+  resources :vehicles do
+    resources :angles
+    member do
+      get :reset
     end
-    resource 'ford_f150', controller: 'ford_f150', concerns: :rotatable
+  end
+  resources :equipment do
+    member do
+      put :use
+    end
+  end
+  namespace :cms do
+    root 'dashboard#index'
+    get 'dashboard', to: 'dashboard#index', as: :dashboard
+    resources :vehicles do
+      resources :angles
+    end
+    resources :angles do
+      resources :categories
+      resources :pictures
+    end
+    resources :categories do
+      resources :equipment
+    end
+    resources :pictures
+    resources :equipment
+    resources :administrators
+    resource :profile do
+      get 'edit_password'
+      put 'update_password'
+    end
+    get 'signin', to: 'sessions#new', as: :signin
+    post 'signin', to: 'sessions#create'
+    get 'signout', to: 'sessions#destroy', as: :signout
   end
 end

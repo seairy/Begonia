@@ -1,0 +1,64 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> 车辆管理 <span>查看</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">车辆信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'vehicle.name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @vehicle.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'vehicle.visible' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @vehicle.visible?, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '返回车辆列表', cms_vehicles_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to '编辑', edit_cms_vehicle_path(@vehicle), class: 'btn btn-primary' %>&nbsp;
+    </div>
+  </div>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">车辆信息</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-responsive">
+          <table class="table table-primary table-striped mb30">
+            <thead>
+              <tr>
+                <th><%= brac_t 'angle.name' %></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @vehicle.angles.each do |angle| %>
+              <tr>
+                <td><%= angle.name %></td>
+                <td class="table-action">
+                  <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, angle] %>
+                  <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_angle_path(@vehicle, angle) %>
+                </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '创建', new_cms_vehicle_angle_path(@vehicle), class: 'btn btn-primary' %>&nbsp;
+    </div>
+  </div>
+</div>
