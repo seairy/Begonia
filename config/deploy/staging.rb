@@ -1,9 +1,11 @@
 # -*- encoding : utf-8 -*-
 set :stage, :staging
 set :branch, 'master'
-set :deploy_user, 'seairy'
+set :rvm_type, :user
+set :rvm_ruby_version, '2.1.0'
+set :deploy_user, 'deploy'
 
-server '60.247.115.253', port: 3030, user: 'root', roles: %w{web app db}, primary: true
+server '123.57.210.52', user: 'deploy', roles: %w{web app db}
 
 set :deploy_to, "/srv/www/Begonia"
-set :rails_env, :production
+set :rails_env, :development
