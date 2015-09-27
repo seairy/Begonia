@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     get 'aerospace', to: 'markets#aerospace', as: :aerospace
   end
   scope 'products', as: 'products' do
-    get 'super_terminal_3_in_1', to: 'products#super_terminal_3_in_1', as: :super_terminal_3_in_1
     get 'car_mobile_communication_antenna_point_6', to: 'products#car_mobile_communication_antenna_point_6', as: :car_mobile_communication_antenna_point_6
     get 'car_mobile_communication_antenna_point_9', to: 'products#car_mobile_communication_antenna_point_9', as: :car_mobile_communication_antenna_point_9
     get 'portable_transportable_satellite_station_manual', to: 'products#portable_transportable_satellite_station_manual', as: :portable_transportable_satellite_station_manual
@@ -17,6 +16,10 @@ Rails.application.routes.draw do
     get 'shipboard_antenna_c', to: 'products#shipboard_antenna_c', as: :shipboard_antenna_c
     get 'shipboard_antenna_ku', to: 'products#shipboard_antenna_ku', as: :shipboard_antenna_ku
     get 'through_static_antenna', to: 'products#through_static_antenna', as: :through_static_antenna
+    get 'super_terminal_3_in_1', to: 'products#super_terminal_3_in_1', as: :super_terminal_3_in_1
+    get 'air_communication_antenna_7_mm', to: 'products#air_communication_antenna_7_mm', as: :air_communication_antenna_7_mm
+    get 'ground_station_antenna_4_point_5', to: 'products#ground_station_antenna_4_point_5', as: :ground_station_antenna_4_point_5
+    get 'ground_station_antenna_6_point_2', to: 'products#ground_station_antenna_6_point_2', as: :ground_station_antenna_6_point_2
   end
   resources :downloads do
     collection do

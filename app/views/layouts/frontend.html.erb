@@ -11,11 +11,11 @@
     <%= stylesheet_link_tag 'frontend', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'frontend/modernizr', 'data-turbolinks-track' => true %>
     <!--[if IE]>
-      <%= stylesheet_link_tag 'frontend/ie', media: 'all', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag 'frontend/ie', media: 'all' %>
     <![endif]-->
     <!--[if lte IE 8]>
-      <%= javascript_include_tag 'frontend/respond', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'frontend/excanvas', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'frontend/respond' %>
+      <%= javascript_include_tag 'frontend/excanvas' %>
     <![endif]-->
   </head>
   <body>
@@ -43,13 +43,52 @@
                   <%= link_to raw('产品系列 <i class="fa fa-angle-down"></i>'), nil, class: 'dropdown-toggle' %>
                   <ul class="dropdown-menu">
                     <li><%= link_to '超级终端三合一', products_super_terminal_3_in_1_path %></li>
-                    <li><%= link_to '车载动中通0.6米', products_car_mobile_communication_antenna_point_6_path %></li>
-                    <li><%= link_to '车载动中通0.9米', products_car_mobile_communication_antenna_point_9_path %></li>
-                    <li><%= link_to '车载静中通', products_through_static_antenna_path %></li>
-                    <li><%= link_to '船载动中通Ku频', products_shipboard_antenna_ku_path %></li>
-                    <li><%= link_to '船载动中通C频', products_shipboard_antenna_c_path %></li>
-                    <li><%= link_to '全新自动便携站', products_portable_transportable_satellite_station_auto_path %></li>
-                    <li><%= link_to '全新手动便携站', products_portable_transportable_satellite_station_manual_path %></li>
+                    <li class="dropdown-submenu">
+                      <a href="#">便携站系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '全新自动便携站', products_portable_transportable_satellite_station_auto_path %></li>
+                          <li><%= link_to '全新手动便携站', products_portable_transportable_satellite_station_manual_path %></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">车载动中通系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '车载动中通0.6米', products_car_mobile_communication_antenna_point_6_path %></li>
+                          <li><%= link_to '车载动中通0.9米', products_car_mobile_communication_antenna_point_9_path %></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">车载静中通系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '车载静中通', products_through_static_antenna_path %></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">机载动中通系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '机载动中通7mm', products_air_communication_antenna_7_mm_path %></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">船载动中通系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '船载动中通Ku频', products_shipboard_antenna_ku_path %></li>
+                          <li><%= link_to '船载动中通C频', products_shipboard_antenna_c_path %></li>
+                        </ul>
+                      </a>
+                    </li>
+                    <li class="dropdown-submenu">
+                      <a href="#">地面站系列</a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to '地面站4.5米', products_ground_station_antenna_4_point_5_path %></li>
+                          <li><%= link_to '地面站6.2米', products_ground_station_antenna_6_point_2_path %></li>
+                        </ul>
+                      </a>
+                    </li>
                   </ul>
                 </li>
                 <li class="dropdown">
